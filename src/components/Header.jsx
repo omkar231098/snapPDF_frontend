@@ -79,7 +79,7 @@ const Header = () => {
                   navigate("/login");
                 }}
               >
-                Logo
+                Login
               </button>
             </div>
             <div>
