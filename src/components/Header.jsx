@@ -67,7 +67,7 @@ const Header = () => {
           <div className={style.userProfile}>
             <span className={style.userName}>Hello, {userName}</span>
             <button className={style.logoutbtn} onClick={handleLogout}>
-              Logo
+              Logout
             </button>
           </div>
         ) : (
@@ -79,7 +79,7 @@ const Header = () => {
                   navigate("/login");
                 }}
               >
-                Login
+                Logo
               </button>
             </div>
             <div>
