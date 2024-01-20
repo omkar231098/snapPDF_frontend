@@ -40,19 +40,29 @@ const Form = () => {
         setPdfUrl(pdfUrl);
 
 
-        Swal.fire({
-          icon: 'success',
-          title:response.message
-          ,
-         
-        });
+        if(response.message==="PDF Created Successfully"){
+          Swal.fire({
+            icon: 'success',
+            title: 'PDF Created Successfully',
+      
+          })
+        }else if(response.message==="Too many requests from this IP, please try again later"){
+          Swal.fire({
+            icon: 'info',
+            title: 'Too many requests from this IP',
+            text: 'please try again later',
+            
+          })
+        }else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Form submission failed!',
+            text: 'An error occurred while saving your details.',
+          });
+        }
       } catch (error) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Form submission failed!',
-          text: 'An error occurred while saving your details.',
-        });
-        console.error(error);
+       
+        console.log(error);
       }
   };
 
