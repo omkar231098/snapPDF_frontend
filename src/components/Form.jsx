@@ -27,7 +27,7 @@ const Form = () => {
     formData.append('photo', photo);
 
     try {
-        const response = await axios.post('https://tiny-cyan-slug-ring.cyclic.app/api/users', formData, {
+        const response = await axios.post('https://tiny-cyan-slug-ring.cyclic.app/pdf/submit', formData, {
           headers: { 'Content-Type': 'multipart/form-data' },
           responseType: 'arraybuffer', // Use 'arraybuffer' to handle binary data
         });
