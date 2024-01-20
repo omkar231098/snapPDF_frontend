@@ -31,15 +31,20 @@ const Form = () => {
           headers: { 'Content-Type': 'multipart/form-data' },
           responseType: 'arraybuffer', // Use 'arraybuffer' to handle binary data
         });
-  
+
+        
+        
         // Save the generated PDF
         const pdfBlob = new Blob([response.data], { type: 'application/pdf' });
         const pdfUrl = URL.createObjectURL(pdfBlob);
         setPdfUrl(pdfUrl);
+
+
         Swal.fire({
           icon: 'success',
-          title: 'Form submitted successfully!',
-          text: 'Your details have been saved.',
+          title:response.message
+          ,
+         
         });
       } catch (error) {
         Swal.fire({

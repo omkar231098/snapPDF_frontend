@@ -32,38 +32,44 @@ const Login = () => {
         });
     
         const data = await response.json();
-    
+    console.log("my response",data)
         setIsLoading(false);
     
-        if (data.alertMessage) {
+        if(data.message==="User not found"){
+          Swal.fire({
+            icon: 'info',
+            title: 'User not found',
+            text: 'Please Register',
+            timer: 1500
+          })
+        }else if(data.message==="Incorrect Password"){
+          Swal.fire({
+            icon: 'info',
+            title: 'Incorrect Password',
+            text: 'Please check your password',
+            timer: 1500
+          })
+        }else if(data.message==="Successfully logged in"){
           Swal.fire({
             icon: 'success',
-            title: data.alertMessage,
-            showConfirmButton: false,
-            timer: 1500,
+            title: 'Login Successful',
+            timer: 1500
           }).then(() => {
-            navigate('/form');
-          });
-        } else {
-          navigate('/');
+                navigate('/form');
+              });
+        }else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Login Failed',
+            text: 'Please check your login details',
+          })
         }
+
+      
       } catch (error) {
         setIsLoading(false);
     
-        if (error.message) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Login Failed',
-            text: error.message,
-          });
-        } else {
-          console.error('Error during login:', error);
-          Swal.fire({
-            icon: 'error',
-            title: 'Login Failed',
-            text: 'An error occurred during login. Check the console for details.',
-          });
-        }
+      console.log(error)
       }
     };
     
