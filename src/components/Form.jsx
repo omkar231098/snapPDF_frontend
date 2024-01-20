@@ -64,7 +64,7 @@ const Form = () => {
     <div style={{ display: 'flex', height: '85vh',marginTop:'10px' }}>
     {/* Form Section */}
     <div style={{ flex: 1, padding: '20px', overflowY: 'auto' }}>
-      <form >
+      <myform >
         <h1>Enter Your Details</h1>
         <input style={{ fontSize:"15px", fontFamily:'Kanit, sans-serif'}} type="text" name="name" onChange={(e) => setName(e.target.value)} value={name} placeholder="Name" />
         <input style={{ fontSize:"15px", fontFamily:'Kanit, sans-serif'}} type="number" name="age" onChange={(e) => setAge(e.target.value)} value={age} placeholder="Age" />
@@ -73,7 +73,7 @@ const Form = () => {
   
         <button onClick={handleSubmit} style={{ fontSize:"15px", fontFamily:'Kanit, sans-serif'}} type="submit">Save</button>
         {/* Add more form elements as needed */}
-      </form>
+      </myform>
     </div>
   
     {/* Vertical Line */}
