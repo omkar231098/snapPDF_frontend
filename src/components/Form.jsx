@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Form.css';
 import Header from './Header'
-// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 // import Cookies from 'js-cookie';
 // import { useNavigate } from 'react-router-dom';
 const Form = () => {
