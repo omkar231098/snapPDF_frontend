@@ -35,7 +35,8 @@ const Header = () => {
     }
   }, [token]);
 
-  const handleLogout = () => {
+  const handleLogout = () => { 
+    navigate("/");
     localStorage.removeItem("authtoken");
     setToken(null);
   };
