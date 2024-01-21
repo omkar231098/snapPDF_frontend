@@ -32,7 +32,12 @@ const Login = () => {
         });
     
         const data = await response.json();
-        localStorage.setItem('authtoken', data.accessToken)
+
+        if (data.accessToken !== undefined) {
+          localStorage.setItem('authtoken', data.accessToken);
+        }
+
+        
     console.log("my response",data)
         setIsLoading(false);
         
@@ -59,6 +64,8 @@ const Login = () => {
           }).then(() => {
                 navigate('/form');
               });
+
+              
         }else{
           Swal.fire({
             icon: 'error',
