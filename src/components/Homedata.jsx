@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import style from "./homedata.module.css";
 import Hero_1 from "../assets/images/homebanner.png";
 import { useNavigate } from "react-router-dom";
