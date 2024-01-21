@@ -32,9 +32,11 @@ const Login = () => {
         });
     
         const data = await response.json();
+        localStorage.setItem('authtoken', data.accessToken)
     console.log("my response",data)
         setIsLoading(false);
-    
+        
+       
         if(data.message==="User not found"){
           Swal.fire({
             icon: 'info',
