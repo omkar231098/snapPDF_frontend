@@ -27,8 +27,16 @@ const Form = () => {
     formData.append('photo', photo);
 
     try {
+
+      const token = localStorage.getItem('authtoken'); // Get the token from localStorage
+
         const response = await axios.post('https://tiny-cyan-slug-ring.cyclic.app/pdf/submit', formData, {
-          headers: { 'Content-Type': 'multipart/form-data' },
+          headers: { 
+
+          'Content-Type': 'multipart/form-data',
+          'Authorization': `Bearer ${token}` 
+          
+        },
           responseType: 'arraybuffer', // Use 'arraybuffer' to handle binary data
         });
 
